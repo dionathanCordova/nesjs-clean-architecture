@@ -7,6 +7,12 @@ export class SignUpController {
 
   @Get('')
   async handle(@Res() httpRequest: any) {
-    return { statusCode: HttpStatus.BAD_REQUEST, body: new Error('Missing param name') };
+    const message = !httpRequest.body.name
+      ? new Error('Missing param name')
+      : !httpRequest.body.email
+      ? new Error('Missing param email')
+      : '';
+
+    return { statusCode: HttpStatus.BAD_REQUEST, body: message };
   }
 }
