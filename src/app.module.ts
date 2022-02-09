@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { APP_FILTER } from '@nestjs/core';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { EntityNotFoundExceptionFilter } from './src/common/filters/not-found-exception.filter';
-import { QueryFailedExceptionFilter } from './src/common/filters/query-failed-exception.filter';
-import { AppConfigModule } from './src/config/app/config.module';
-import { SignUpModule } from './src/modules/sign-up/sign-up.module';
+import { EntityNotFoundExceptionFilter } from './common/filters/not-found-exception.filter';
+import { QueryFailedExceptionFilter } from './common/filters/query-failed-exception.filter';
+import { AppConfigModule } from './config/app/config.module';
+import { SignUpModule } from './modules/sign-up/sign-up.module';
 
 @Module({
   imports: [AppConfigModule, SignUpModule],
